@@ -1,0 +1,475 @@
+:root {
+    --text-color: #2d2d2d; /* Softer than pure black */
+    --secondary-text: #555555; /* For paragraph text */
+    --link-color: #2563eb; /* A nice Royal Blue, or try #e11d48 for a Rose color */
+    --background-color: #f8f9fa; /* Very slight off-white for less glare */
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--background-color);
+    /* Keep Roboto Mono, but maybe use a Sans-Serif for big headers? */
+    font-family: 'Roboto Mono', monospace; 
+}
+
+p {
+    color: var(--secondary-text); /* Makes large text blocks easier to read */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: var(--background-color);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+/*NAVBAR*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    height: 80px;
+    align-items: center;
+}
+
+nav .left a {
+    color:var(--text-color);
+    font-size: 22px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+nav .left a:hover {
+    opacity: 0.7;
+}nav .right a {
+    color: var(--text-color);
+    font-weight: 400;
+    margin: 0 10px;
+    position: relative;
+    transition: 0.2s;
+}
+
+/* subtle underline animation */
+nav .right a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--text-color);
+    transition: 0.25s;
+}
+
+nav .right a:hover::after {
+    width: 100%;
+}
+
+/* button link */
+nav .right a:last-child {
+    color: var(--background-color);
+    background-color: var(--text-color);
+    padding: 5px 15px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+
+nav .right a span {
+    margin-left: 5px;
+}
+
+/*Section 1: Hero*/
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    margin: 50px 0 80px;
+    gap: 40px;
+}
+
+.hero-section .text {
+    flex: 5;
+    line-height: 1.75;
+    letter-spacing: 0.2px;
+}
+
+.hero-section .text h2 {
+    font-size: 42px;
+}
+
+.hero-section .text .links {
+    margin-top: 20px;
+}
+
+.hero-section .text .links a {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 2px solid var(--link-color);
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: 0.25s ease; /* smoother animation */
+    transform: translateY(0) scale(1);
+}
+
+.hero-section .text .links a:hover {
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    transform: translateY(-4px) scale(1.03); /* popup effect */
+}
+
+.hero-section .headshot {
+    flex: 2;
+    display: flex;
+    justify-content: right;
+}
+
+.hero-section .headshot img {
+    height: 350px; 
+    width: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/*Skills*/
+.skills-section {
+    padding: 0px 50px;
+    margin: 50px 0 80px;
+    gap: 40px;
+}
+
+.skills-section h2 {
+    text-align: center;
+    font-size: 35px;
+}
+
+.skills-section .text {
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.75;
+    letter-spacing: 0.2px;
+}
+
+.skills-section .cells {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.skills-section .cells .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+    padding: 10px 20px;
+    border: 1.5px solid #d3d3d3;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.skills-section .cells .cell span {
+    font-size: 18px;
+}
+
+.skills-section .cells .cell img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: 2px;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 25px;
+    background: rgba(0, 0, 0, 0.00); /* Very light grey background */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 50px; /* Pill shape */
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.cell:hover {
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: scale(1.05);
+}
+
+/* PROJECTS SECTION — NO CAROUSEL */
+.projects-section {
+    text-align: center;
+    padding: 20px 50px;
+    margin-bottom: 100px;
+}
+
+.projects-section h2 {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.projects-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.project-card {
+    width: 300px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
+}
+
+.project-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.project-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.project-card p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/*contacts*/
+.contact-section {
+    padding: 100px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.contact-card {
+    background: var(--text-color); /* Dark background for contrast */
+    color: white;
+    padding: 60px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 700px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.contact-card h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-card p {
+    color: #cccccc;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.email-btn {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+    margin-bottom: 30px;
+}
+
+.email-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,255,255,0.4);
+}
+
+.socials-mini a {
+    color: #888;
+    font-size: 14px;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.socials-mini a:hover {
+    color: white;
+}
+
+.email-text {
+    font-size: 14px !important;
+    color: #888;
+    margin-top: 0; /* Pull it closer to the button */
+    margin-bottom: 30px;
+    user-select: all; /* Makes it easy to select the whole email with one click */
+    transition: 0.2s;
+}
+
+
+
+/*footer*/
+footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--secondary-text);
+    font-size: 14px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.back-to-top {
+    color: var(--link-color);
+    font-weight: 600;
+}
+
+/*responsive*/
+
+@media (max-width: 850px) {
+    .hero-section .text h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 770px) {
+    .hero-section {
+        flex-direction: column-reverse;   
+    }
+
+    .hero-section .headshot img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 700px) {
+    nav {
+        padding: 0 20px;
+    }
+
+    nav .right a {
+        font-size: 22px;
+    }
+
+    nav .right a:last-child {
+        color: var(--text-color);
+        background-color: transparent;
+        padding: 0px;   
+    }
+
+    nav .right a span {
+        display: none;
+    }
+
+    .hero-section {
+        padding: 0 20px;
+    }
+    
+    .hero-section .text h2 {
+        font-size: 30px;
+    }
+
+    .contact-section {
+        padding: 60px 20px; /* Less padding on the sides */
+    }
+
+    /* 2. Contact Card: Make it fit small screens */
+    .contact-card {
+        padding: 30px 20px; /* Smaller internal padding */
+        width: 100%; /* Use full width available */
+    }
+
+    .contact-card h2 {
+        font-size: 26px; /* Smaller headline */
+    }
+
+    .contact-card p {
+        font-size: 16px; /* Readable text size */
+        margin-bottom: 30px;
+    }
+
+    /* 3. Footer: Ensure it stacks nicely if you add more links later */
+    footer {
+        padding: 30px 20px;
+    }
+    
+    /* 4. Adjust the email button to not overflow */
+    .email-btn {
+        width: 100%; /* Full width button on mobile is easier to tap */
+        box-sizing: border-box;
+    }
+
+    
+}
+
+/* Section 2 mobile fix */
+.skills-section {
+    padding: 0 20px;
+}
+
+.skills-section .cells .cell {
+    font-size: 16px;
+}
+
+/* 1. The Floating Animation Keyframes */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); } /* Moves up */
+    100% { transform: translateY(0px); }
+}
+
+/* Apply float to the headshot */
+.hero-section .headshot img {
+    animation: float 4s ease-in-out infinite; /* Floats forever */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1); /* Adds depth */
+}
+
+/* 2. The Slide-In Animation Keyframes */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
